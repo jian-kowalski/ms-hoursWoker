@@ -4,29 +4,23 @@ import java.math.BigDecimal;
 
 public class Payment {
 
-    private String name;
-    private BigDecimal dailyIncome;
-    private Integer days;
+    private final String name;
+    private final BigDecimal dailyIncome;
+    private final Integer days;
     private BigDecimal total;
     
     public String getName() {
         return name;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
+    
     public BigDecimal getDailyIncome() {
         return dailyIncome;
     }
-    public void setDailyIncome(BigDecimal dailyIncome) {
-        this.dailyIncome = dailyIncome;
-    }
+  
     public Integer getDays() {
         return days;
     }
-    public void setDays(Integer days) {
-        this.days = days;
-    }
+   
     public BigDecimal getTotal(){
         total = (dailyIncome.multiply(BigDecimal.valueOf(days))); 
         return total;
