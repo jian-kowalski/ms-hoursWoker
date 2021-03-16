@@ -6,6 +6,7 @@ import com.jiankowalski.hrworker.domain.repository.WorkerRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class WorkerService {
@@ -21,7 +22,11 @@ public class WorkerService {
         return workerRepository.save(worker);
     }
 
-    public Worker getWorker(Long workerId) {
+    public List<Worker> findAllWorkers() {
+        return workerRepository.findAll();
+    }
+
+    public Worker findWorkerByID(Long workerId) {
         return workerRepository.findById(workerId)
                 .orElseThrow(() -> new WorkerNotFound(workerId));
     }
