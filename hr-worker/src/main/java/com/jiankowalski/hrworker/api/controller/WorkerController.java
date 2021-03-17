@@ -28,7 +28,7 @@ public class WorkerController {
     }
 
     @GetMapping("/{workerId}")
-    public WorkerModel get(@PathVariable Long workerId){
+    public WorkerModel findById(@PathVariable Long workerId){
         return workerAssembler.toModel(workerService.findWorkerByID(workerId));
     }
 
