@@ -1,5 +1,7 @@
 package com.jiankowalski.hrpayroll.domain.service;
 
+import java.math.BigDecimal;
+
 import com.jiankowalski.hrpayroll.api.model.WorkerModel;
 import com.jiankowalski.hrpayroll.domain.feignclients.WorkerFeignClients;
 import com.jiankowalski.hrpayroll.domain.model.Payment;
@@ -18,6 +20,10 @@ public class PaymentService {
     
     public PaymentService(WorkerFeignClients workerFeignClients) {
         WorkerFeignClients = workerFeignClients;
+    }
+
+    public Payment getpPaymentAlternative(Long workerId, Integer days) {
+        return new Payment("Jian", BigDecimal.valueOf(200.0), days);
     }
 
 }
