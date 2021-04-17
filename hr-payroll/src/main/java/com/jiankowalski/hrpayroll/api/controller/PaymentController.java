@@ -1,7 +1,5 @@
 package com.jiankowalski.hrpayroll.api.controller;
 
-import java.math.BigDecimal;
-
 import com.jiankowalski.hrpayroll.api.assembler.PaymentAssembler;
 import com.jiankowalski.hrpayroll.api.model.PaymentModel;
 import com.jiankowalski.hrpayroll.domain.service.PaymentService;
