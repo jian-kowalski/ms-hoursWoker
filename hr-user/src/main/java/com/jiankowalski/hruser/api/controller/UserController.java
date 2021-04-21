@@ -7,6 +7,7 @@ import com.jiankowalski.hruser.domain.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -22,10 +23,10 @@ public class UserController {
         this.userAssembler = userAssembler;
     }
 
-    // @GetMapping("/{email}")
-    // public UserModel findById(@PathVariable String email){
-    //     return userAssembler.toModel(userService.findUserByEmail(email));
-    // }
+    @GetMapping("/search")
+    public UserModel findUserByEmail(@RequestParam String email){
+        return userAssembler.toModel(userService.findUserByEmail(email));
+    }
 
      @GetMapping("/{id}")
     public UserModel findById(@PathVariable Long id) {
